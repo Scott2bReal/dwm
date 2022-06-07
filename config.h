@@ -7,7 +7,7 @@ static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows sel
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 1;     /* 0 means no systray */
+static const int showsystray        = 1;        /* 0 means no systray */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
@@ -78,6 +78,11 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *firefoxcmd[] = { "firefox", NULL };
 static const char *discordcmd[] = { "discord" , NULL };
 static const char *slackcmd[] = { "slack" , NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
+static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char *upbright[] = {"xbacklight", "-inc", "5", NULL };
+static const char *downbright[] = {"xbacklight", "-dec", "5", NULL };
 
 
 static Key keys[] = {
@@ -126,7 +131,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_i,      spawn,         {.v = firefoxcmd } },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,         {.v = discordcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,         {.v = slackcmd } },
-
+  // Hardware buttons for volume, brightness etc.
+  { 0,                            XF86XK_AudioRaiseVolume,  spawn, {.v = upvol }},
+  { 0,                            XF86XK_AudioLowerVolume,  spawn, {.v = downvol }},
+  { 0,                            XF86XK_AudioMute,         spawn, {.v = mutevol }},
+  { 0,                            XF86XK_MonBrightnessUp,   spawn, {.v = upbright }},
+  { 0,                            XF86XK_MonBrightnessDown, spawn, {.v = downbright }},
 
 };
 
