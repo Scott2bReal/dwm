@@ -17,15 +17,15 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Fira Code Nerd Font:size=9" };
 static const char dmenufont[]       = "Fira Code Nerd Font:size=9";
-static const char col_gray1[]       = "#282828";
+static const char col_black[]       = "#282828";
 static const char col_gray2[]       = "#665c54";
 static const char col_gray3[]       = "#928374";
-static const char col_gray4[]       = "#dfbf8e";
-static const char col_cyan[]        = "#a9b665";
+static const char col_white[]       = "#dfbf8e";
+static const char col_green[]        = "#a9b665";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray1, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_white, col_black, col_gray2 },
+	[SchemeSel]  = { col_black, col_green,  col_green  },
 };
 
 /* tagging */
@@ -73,7 +73,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray1, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_white, "-sb", col_green, "-sf", col_black, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *firefoxcmd[] = { "firefox", NULL };
 static const char *discordcmd[] = { "discord" , NULL };
