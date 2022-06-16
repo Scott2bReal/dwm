@@ -83,6 +83,8 @@ static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", 
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
 static const char *upbright[] = {"xbacklight", "-inc", "5", NULL };
 static const char *downbright[] = {"xbacklight", "-dec", "5", NULL };
+static const char *ncmpcppcmd[] = { "alacritty", "-e", "ncmpcpp", NULL };
+static const char *sysmoncmd[] = { "alacritty", "-e", "btop", NULL };
 
 
 static Key keys[] = {
@@ -131,6 +133,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_i,      spawn,         {.v = firefoxcmd } },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,         {.v = discordcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,         {.v = slackcmd } },
+  { MODKEY|ShiftMask,             XK_m,      spawn,         {.v = ncmpcppcmd } },
+  { MODKEY|ShiftMask,             XK_b,      spawn,         {.v = sysmoncmd } },
   // Hardware buttons for volume, brightness etc.
   { 0,                            XF86XK_AudioRaiseVolume,  spawn, {.v = upvol }},
   { 0,                            XF86XK_AudioLowerVolume,  spawn, {.v = downvol }},
