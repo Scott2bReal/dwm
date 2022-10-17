@@ -17,10 +17,10 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Fira Code Nerd Font:size=9" };
 static const char dmenufont[]       = "Fira Code Nerd Font:size=9";
-static const char col_black[]       = "#282828";
-// static const char col_black[]       = "#1F1F28";
 static const char col_gray2[]       = "#665c54";
 static const char col_gray3[]       = "#928374";
+static const char col_black[]       = "#282828";
+// static const char col_black[]       = "#1F1F28";
 static const char col_white[]       = "#dfbf8e";
 // static const char col_white[]       = "#C8C093";
 static const char col_green[]        = "#a9b665";
