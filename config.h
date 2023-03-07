@@ -81,6 +81,7 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *firefoxcmd[] = { "firefox", NULL };
 static const char *discordcmd[] = { "discord" , NULL };
 static const char *slackcmd[] = { "slack" , NULL };
+static const char *shotcmd[] = { "shot", NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
@@ -138,6 +139,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_s,      spawn,         {.v = slackcmd } },
   { MODKEY|ShiftMask,             XK_b,      spawn,         {.v = sysmoncmd }},
   { MODKEY|ShiftMask,             XK_m,      spawn,         {.v = ncmpcppcmd }},
+  { MODKEY,                       XK_s,      spawn,         {.v = shotcmd }},
   // Hardware buttons for volume, brightness etc.
   { 0,                            XF86XK_AudioRaiseVolume,  spawn, {.v = upvol }},
   { 0,                            XF86XK_AudioLowerVolume,  spawn, {.v = downvol }},
