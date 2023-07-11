@@ -15,8 +15,8 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code Nerd Font:size=9" };
-static const char dmenufont[]       = "Fira Code Nerd Font:size=9";
+static const char *fonts[]          = { "FiraCode Nerd Font:size=9" };
+static const char dmenufont[]       = "FiraCode Nerd Font:size=9";
 static const char col_gray2[]       = "#665c54";
 static const char col_gray3[]       = "#928374";
 static const char col_black[]       = "#282828";
@@ -33,7 +33,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tags[] = { "", "", "ﭮ", "", "", "", "ﱬ", "", "" };
+static const char *tags[] = { "", "", "󰙯", "", "󰍫", "", "󰝮", "", "" };
 
 
 /* Lockfile */
@@ -82,6 +82,7 @@ static const char *firefoxcmd[] = { "firefox", NULL };
 static const char *discordcmd[] = { "discord" , NULL };
 static const char *slackcmd[] = { "slack" , NULL };
 static const char *shotcmd[] = { "shot", NULL };
+static const char *measurecmd[] = { "measure", NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
@@ -139,6 +140,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_s,      spawn,         {.v = slackcmd } },
   { MODKEY|ShiftMask,             XK_b,      spawn,         {.v = sysmoncmd }},
   { MODKEY|ShiftMask,             XK_m,      spawn,         {.v = ncmpcppcmd }},
+  { Mod1Mask|ShiftMask,           XK_m,      spawn,         {.v = measurecmd }},
   { MODKEY,                       XK_s,      spawn,         {.v = shotcmd }},
   // Hardware buttons for volume, brightness etc.
   { 0,                            XF86XK_AudioRaiseVolume,  spawn, {.v = upvol }},
